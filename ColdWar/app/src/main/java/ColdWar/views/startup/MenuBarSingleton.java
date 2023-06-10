@@ -11,8 +11,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
- *
- * @author tmang
+ * Singleton implementation of a custom menu bar.
  */
 public class MenuBarSingleton extends JMenuBar implements ActionListener{
   

@@ -12,7 +12,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -20,8 +26,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 /**
- *
- * @author tmang
+ * The view when the game is opened.
  */
 public class StartupView extends AbstractView implements ActionListener{
     
@@ -29,6 +34,10 @@ public class StartupView extends AbstractView implements ActionListener{
     public static final int STARTUP_BTN_WIDTH = 350;
     public static final String TOEXIT_COMMAND = "toExit";
     public static final String TOPLAY_COMMAND = "toPlay";
+    public static final String LOGO_FILE = "logo/logo.png";
+    
+    private BufferedImage logoPicture;
+    private JLabel title;
     
     public StartupView(StartupController ctr){
         super.setController(ctr);
@@ -40,10 +49,20 @@ public class StartupView extends AbstractView implements ActionListener{
         startupPanel.setPreferredSize(new Dimension(FrameSingleton.FRAME_WIDTH, FrameSingleton.FRAME_HEIGHT));
         startupPanel.setBackground(new Color(FrameSingleton.FRAME_BG));
         
-        JLabel tempTitle = new JLabel("<html><span style='font-size:40px'>Cold War</span></html>", SwingConstants.CENTER);
-        tempTitle.setPreferredSize(new Dimension(550, 300));
-        tempTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        tempTitle.setVerticalAlignment(SwingConstants.CENTER);
+        try {
+			logoPicture = ImageIO.read(new File(LOGO_FILE));
+		} catch (IOException e) {
+			logoPicture = null;
+		} 
+        if(logoPicture != null) {
+        	title = new JLabel(new ImageIcon(logoPicture));
+        }else {
+        	title = new JLabel("<html><span style='font-size:40px'>Cold War</span></html>", SwingConstants.CENTER);
+
+        }
+        title.setPreferredSize(new Dimension(550, 300));
+        title.setHorizontalAlignment(SwingConstants.CENTER);
+        
         
         JButton toPlay = new JButton("Play");
         toPlay.setPreferredSize(new Dimension(STARTUP_BTN_WIDTH, STARTUP_BTN_HEIGHT));
@@ -58,7 +77,7 @@ public class StartupView extends AbstractView implements ActionListener{
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
-        startupPanel.add(tempTitle, c);
+        startupPanel.add(title, c);
         
         c.gridx = 0;
         c.gridy = 1;
