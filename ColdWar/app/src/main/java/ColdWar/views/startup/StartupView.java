@@ -34,9 +34,8 @@ public class StartupView extends AbstractView implements ActionListener{
     public static final int STARTUP_BTN_WIDTH = 350;
     public static final String TOEXIT_COMMAND = "toExit";
     public static final String TOPLAY_COMMAND = "toPlay";
-    public static final String LOGO_FILE = "logo/logo.png";
+    public static final String LOGO_FILE = "/logo/logo.png";
     
-    private BufferedImage logoPicture;
     private JLabel title;
     
     public StartupView(StartupController ctr){
@@ -49,18 +48,14 @@ public class StartupView extends AbstractView implements ActionListener{
         startupPanel.setPreferredSize(new Dimension(FrameSingleton.FRAME_WIDTH, FrameSingleton.FRAME_HEIGHT));
         startupPanel.setBackground(new Color(FrameSingleton.FRAME_BG));
         
-        try {
-			logoPicture = ImageIO.read(new File(LOGO_FILE));
+        BufferedImage logoPicture;
+		try {
+			logoPicture = ImageIO.read(this.getClass().getResourceAsStream(LOGO_FILE));
+			title = new JLabel(new ImageIcon(logoPicture));
 		} catch (IOException e) {
-			logoPicture = null;
-		} 
-        if(logoPicture != null) {
-        	title = new JLabel(new ImageIcon(logoPicture));
-        }else {
-        	title = new JLabel("<html><span style='font-size:40px'>Cold War</span></html>", SwingConstants.CENTER);
-
-        }
-        title.setPreferredSize(new Dimension(550, 300));
+			title = new JLabel("<html><h1>Cold War</h1></html>");
+		}
+		title.setPreferredSize(new Dimension(550, 300));
         title.setHorizontalAlignment(SwingConstants.CENTER);
         
         
