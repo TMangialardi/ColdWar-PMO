@@ -34,7 +34,7 @@ public class StartupView extends AbstractView implements ActionListener{
     public static final int STARTUP_BTN_WIDTH = 350;
     public static final String TOEXIT_COMMAND = "toExit";
     public static final String TOPLAY_COMMAND = "toPlay";
-    public static final String LOGO_FILE = "/logo/logo.png";
+    public static final String LOGO_FILE = "ColdWar/resources/logo/logo.png";
     
     private JLabel title;
     
