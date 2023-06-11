@@ -13,9 +13,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
@@ -59,12 +57,12 @@ public class StartupView extends AbstractView implements ActionListener{
         title.setHorizontalAlignment(SwingConstants.CENTER);
         
         
-        JButton toPlay = new JButton("Play");
+        JButton toPlay = new JButton("<html><h1>Play</h1></html>");
         toPlay.setPreferredSize(new Dimension(STARTUP_BTN_WIDTH, STARTUP_BTN_HEIGHT));
         toPlay.addActionListener(this);
         toPlay.setActionCommand(TOPLAY_COMMAND);
         
-        JButton toExit = new JButton("Exit");
+        JButton toExit = new JButton("<html><h1>Exit</h1></html>");
         toExit.setPreferredSize(new Dimension(STARTUP_BTN_WIDTH, STARTUP_BTN_HEIGHT));
         toExit.addActionListener(this);
         toExit.setActionCommand(TOEXIT_COMMAND);

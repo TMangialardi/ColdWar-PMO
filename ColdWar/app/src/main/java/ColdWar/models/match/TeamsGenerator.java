@@ -55,6 +55,8 @@ public class TeamsGenerator implements ITeamsGenerator{
         for(int i = (this.countDoubleAgents + this.countCIA); i < ApplicationInstance.getInstance().getPlayers().get().size(); i++){
             ApplicationInstance.getInstance().getPlayer(i).get().setTeam(Team.KGB);
         }
+        
+        Collections.shuffle(ApplicationInstance.getInstance().getPlayers().get());
     }
     
     /**

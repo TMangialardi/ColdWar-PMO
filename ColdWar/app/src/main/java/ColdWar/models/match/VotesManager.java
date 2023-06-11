@@ -74,7 +74,7 @@ public class VotesManager implements IVotesManager{
         switch (turn) {
             case 1:
                 for(Player p : ApplicationInstance.getInstance().getPlayers().get()){
-                    if(p.getTurnVotes(turn) == maxVotes){
+                    if(p.getTurnVotes(turn) == maxVotes && p.isAlive()){
                         p.setDead();
                         p.playTurn(2);
                         this.removePlayerFromCount(p);
@@ -84,7 +84,7 @@ public class VotesManager implements IVotesManager{
                 return this.eliminatedFirstTurn;
             case 2:
                 for(Player p : ApplicationInstance.getInstance().getPlayers().get()){
-                    if(p.getTurnVotes(turn) == maxVotes){
+                    if(p.getTurnVotes(turn) == maxVotes && p.isAlive()){
                         p.setDead();
                         this.removePlayerFromCount(p);
                         this.eliminatedSecondTurn.add(p);

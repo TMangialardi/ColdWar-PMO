@@ -40,7 +40,6 @@ public class RolesSummaryView extends AbstractView implements ActionListener{
         
         this.playerCounter = 0;
         this.roleVisibility = false;
-        Collections.shuffle(players);
         
         JPanel rolesSummaryPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
