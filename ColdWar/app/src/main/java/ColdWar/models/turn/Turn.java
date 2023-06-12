@@ -33,7 +33,8 @@ public abstract class Turn implements ITurn{
         boolean ret = true;
         
         for(int i = 0; i < ApplicationInstance.getInstance().getPlayers().get().size(); i++){
-            if(!(ApplicationInstance.getInstance().getPlayer(i).get().hasPlayedThisTurn(turn))){
+            if(!(ApplicationInstance.getInstance().getPlayer(i).get().hasPlayedThisTurn(turn)) &&
+            		ApplicationInstance.getInstance().getPlayer(i).get().isAlive()){
                 ret = false;
             }
         }

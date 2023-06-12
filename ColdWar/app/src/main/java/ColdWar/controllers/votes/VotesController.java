@@ -27,17 +27,23 @@ public class VotesController extends AbstractController{
      */
 	@Override
     public void buttonPressed(String action) {
-        if(((VotesView)(super.getView())).getPlayerCounter() < ((VotesView)(super.getView())).getListMoelSize()){
+        if(((VotesView)(super.getView())).getPlayerCounter() < ((VotesView)(super.getView())).getListModelSize()){
             if(!(((VotesView)(super.getView())).getListScrollPaneVisibility())){
                 ((VotesView)(super.getView())).setListScrollPaneVisibility(true);
                 ((VotesView)(super.getView())).updateFrame();
             }else{
-                int selectedIndex = ((VotesView)(super.getView())).getListSelectedIndex();
-                if(selectedIndex != -1){
+                String selectedElement = ((VotesView)(super.getView())).getListSelected();
+                if(!(selectedElement.isEmpty())){
                     ((VotesView)(super.getView())).clearListSelection();
+                    int selectedIndex = -1;
+                    for(int i = 0; i < super.getModel().getPlayers().get().size(); i++) {
+                    	if(super.getModel().getPlayer(i).get().getName().equals(selectedElement)) {
+                    		selectedIndex = i;
+                    	}
+                    }
                     super.getModel().getPlayer(selectedIndex).get().addVote(super.getModel().getMatch().get().getCurrentTurn());
                     ((VotesView)(super.getView())).incrementPlayerCounter();
-                    if(((VotesView)(super.getView())).getPlayerCounter() < ((VotesView)(super.getView())).getListMoelSize()){
+                    if(((VotesView)(super.getView())).getPlayerCounter() < ((VotesView)(super.getView())).getListModelSize()){
                         ((VotesView)(super.getView())).setPlayerLabelText("<html><h1>"
                                 + ((VotesView)(super.getView())).getFromListModel(((VotesView)(super.getView())).getPlayerCounter())
                                 + "</h1></html>");
@@ -46,6 +52,8 @@ public class VotesController extends AbstractController{
                     }else{
                     	this.generateEliminatedView();
                     }
+                }else {
+                	((VotesView)(super.getView())).showNoPlayerSelectedError();
                 }
             }
         }else{

@@ -19,6 +19,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
@@ -154,16 +155,20 @@ public class VotesView extends AbstractView implements ActionListener{
      * 
      * @return the size of the listModel.
      */
-    public int getListMoelSize() {
+    public int getListModelSize() {
     	return this.listModel.size();
     }
     /**
-     * Method to get the selected index of the list.
+     * Method to get the selected element of the list.
      * 
-     * @return the selected index of the list.
+     * @return the selected element of the list.
      */
-    public int getListSelectedIndex(){
-        return this.list.getSelectedIndex();
+    public String getListSelected(){
+        if(this.list.getSelectedIndex() != -1) {
+        	return this.listModel.get(this.list.getSelectedIndex());
+        }else {
+        	return "";
+        }
     }
     
     /**
@@ -188,6 +193,14 @@ public class VotesView extends AbstractView implements ActionListener{
      */
     public void setPlayerLabelText(String text){
         this.playerLabel.setText(text);
+    }
+    
+    /**
+     * Method to show a dialog window if no player is selected.
+     */
+    public void showNoPlayerSelectedError() {
+    	JOptionPane.showMessageDialog(mainFrame, "You must select a player.");
+
     }
 
     public void actionPerformed(ActionEvent ae) {

@@ -274,33 +274,10 @@ public class DossierView extends AbstractView implements ActionListener{
     }
     
     /**
-     * Method to get the status of the CIA radio button.
+     * Method to get the team selected with the radio buttons.
      * 
-     * @return the status of the CIA radio button.
+     * @return the team selected with the radio buttons.
      */
-    public boolean getCiaButtonEnabled(){
-        return this.ciaButton.isEnabled();
-    }
-    
-    /**
-     * Method to get the status of the KGB radio button.
-     * 
-     * @return the status of the KGB radio button.
-     */
-    public boolean getKgbButtonEnabled(){
-        return this.kgbButton.isEnabled();
-    }
-    
-    /**
-     * Method to get the status of the DOUBLEAGENT radio button.
-     * 
-     * @return the status of the DOUBLEAGENT radio button.
-     */
-    public boolean getDoubleAgentButtonEnabled(){
-        return this.doubleAgentButton.isEnabled();
-    }
-    
-    /********************************/
     public String getTeamSelection() {
     	if(this.group.getSelection() != null) {
     		return this.group.getSelection().getActionCommand();
