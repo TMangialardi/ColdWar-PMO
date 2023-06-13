@@ -55,6 +55,8 @@ public class SetupController extends AbstractController{
                     updateContinueButtonStatus();
                     updateAddButtonStatus();
                     updateRemoveButtonStatus();
+                }else {
+                	((SetupView)super.getView()).showNotSelectedError();
                 }
                 break;
             case SetupView.CONTINUE_COMMAND:

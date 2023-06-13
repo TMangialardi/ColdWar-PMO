@@ -249,6 +249,13 @@ public class SetupView extends AbstractView implements ActionListener{
     public void showDuplicateError() {
     	JOptionPane.showMessageDialog(mainFrame, "The name of every player must be unique.");
     }
+    
+    /**
+     * Show a dialog window if no player is selected.
+     */
+    public void showNotSelectedError() {
+    	JOptionPane.showMessageDialog(mainFrame, "You must select a player to remove it.");
+    }
 
     public void actionPerformed(ActionEvent ae) {
         String action = ae.getActionCommand();

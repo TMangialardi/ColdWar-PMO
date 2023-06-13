@@ -6,6 +6,8 @@ package ColdWar.models.missions;
 
 import ColdWar.models.ApplicationInstance;
 import ColdWar.models.player.IPlayer;
+import ColdWar.models.player.Team;
+
 import java.util.Random;
 
 /**
@@ -27,13 +29,26 @@ public class Colleagues implements ColleaguesMission{
      * {@inheritDoc}
      */
     public void playMission() {
-        int randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
-        this.firstPlayer = ApplicationInstance.getInstance().getPlayer(randomIndex).get();
-        while(randomIndex == ApplicationInstance.getInstance().getPlayers().get().indexOf(firstPlayer) ||
-                this.firstPlayer.getTeam() != ApplicationInstance.getInstance().getPlayer(randomIndex).get().getTeam()){
-            randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
-        }
-        this.secondPlayer = ApplicationInstance.getInstance().getPlayer(randomIndex).get();
+    	if(ApplicationInstance.getInstance().getMatch().get().getCountDoubleAgents() > 1) {
+    		int randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
+            this.firstPlayer = ApplicationInstance.getInstance().getPlayer(randomIndex).get();
+            while(randomIndex == ApplicationInstance.getInstance().getPlayers().get().indexOf(firstPlayer) ||
+                    this.firstPlayer.getTeam() != ApplicationInstance.getInstance().getPlayer(randomIndex).get().getTeam()){
+                randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
+            }
+            this.secondPlayer = ApplicationInstance.getInstance().getPlayer(randomIndex).get();
+    	}else {
+    		int randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
+    		while(ApplicationInstance.getInstance().getPlayer(randomIndex).get().getTeam() == Team.DOUBLEAGENT) {
+    			 randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
+    		}
+            this.firstPlayer = ApplicationInstance.getInstance().getPlayer(randomIndex).get();
+            while(randomIndex == ApplicationInstance.getInstance().getPlayers().get().indexOf(firstPlayer) ||
+                    this.firstPlayer.getTeam() != ApplicationInstance.getInstance().getPlayer(randomIndex).get().getTeam()){
+                randomIndex = rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size());
+            }
+            this.secondPlayer = ApplicationInstance.getInstance().getPlayer(randomIndex).get();
+    	}
     }
 
     /**

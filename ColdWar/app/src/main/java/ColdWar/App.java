@@ -4,6 +4,8 @@
  */
 package ColdWar;
 
+import javax.swing.SwingUtilities;
+
 import ColdWar.controllers.startup.StartupController;
 import ColdWar.views.startup.StartupView;
 
@@ -14,8 +16,19 @@ import ColdWar.views.startup.StartupView;
 public class App {
     
     public static void main(String[] args){
-        StartupController startupController = new StartupController();
-        startupController.setView(new StartupView(startupController));
+    	 SwingUtilities.invokeLater(new Runnable() {
+             public void run() {
+                 try {
+                     createAndShowGUI();
+                 } catch (Exception e) {
+                     e.printStackTrace();
+                 }
+             }
+         });
     }
     
+    private static void createAndShowGUI() {
+    	StartupController startupController = new StartupController();
+        startupController.setView(new StartupView(startupController));
+    }
 }
