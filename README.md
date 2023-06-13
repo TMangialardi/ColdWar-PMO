@@ -9,7 +9,7 @@
   <p align="center">
     A simple Java party game.
     <br />
-    <a href="https://github.com/TMangialardi/ColdWar-.PMO"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/TMangialardi/ColdWar-PMO"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
