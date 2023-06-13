@@ -1,6 +1,19 @@
-# Cold War
-A simple Java party game
+<br />
+<p align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="https://github.com/TMangialardi/ColdWar-PMO/blob/main/ColdWar/app/src/main/java/ColdWar/views/startup/logo/logo.png" alt="Logo" width="550" height="300">
+  </a>
 
+  <h3 align="center">Cold War</h3>
+
+  <p align="center">
+    A simple Java party game.
+    <br />
+    <a href="https://github.com/TMangialardi/ColdWar-.PMO"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+  </p>
+</p>
 Cold War is a political party game inspired to the rivalry between the United States and the Soviet Union and their respective allies. A match requires 5 to 13 players. Each player must be added to the game with a unique name. The players are automatically divided into 3 separate teams: CIA, KGB and Double agents. At the beginning of a match, no player knows the roles of the other players. The number of members in each team is related to the total number of players, according to the following table:
 
 
