@@ -17,6 +17,18 @@
 Cold War is a political party game inspired to the rivalry between the United States and the Soviet Union and their respective allies. A match requires 5 to 13 players. Each player must be added to the game with a unique name. The players are automatically divided into 3 separate teams: CIA, KGB and Double agents. At the beginning of a match, no player knows the roles of the other players. The number of members in each team is related to the total number of players, according to the following table:
 
 
+| Players       | CIA           | KGB           | Double agents |
+| ------------- | ------------- | ------------- | ------------- |
+| 5             | 2             | 2             | 1             |
+| 6             | 2             | 2             | 2             |
+| 7             | 3             | 3             | 1             |
+| 8             | 3             | 3             | 2             |
+| 9             | 4             | 4             | 1             |
+| 10            | 4             | 4             | 2             |
+| 11            | 4             | 4             | 3             |
+| 12            | 5             | 5             | 2             |
+| 13            | 4             | 4             | 3             |
+
 Once the teams are formed the match starts. A match is made of two turns. In each turn every player receives a mission. The players are called one by one and separately, so that no player knows the missions received by the other players. There are 7 possible missions:
 
     Murder: the player, regardless of his team, must cause another player to be eliminated, regardless of that player's team. If the mission is completed within the entire match, the player wins.
