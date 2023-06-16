@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/TMangialardi/ColdWar-PMO">
     <img src="https://github.com/TMangialardi/ColdWar-PMO/blob/main/ColdWar/app/src/main/java/ColdWar/views/startup/logo/logo.png" alt="Logo" width="550" height="300">
   </a>
 
