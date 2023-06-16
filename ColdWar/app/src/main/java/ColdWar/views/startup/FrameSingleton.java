@@ -41,9 +41,9 @@ public class FrameSingleton extends JFrame{
      * Method to configure the singleton instance of the frame.
      */
     private static void configureInstance() {
-    	instance.setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
+    	instance.setMinimumSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
         instance.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        instance.setResizable(false);
+        instance.setResizable(true);
         instance.setBackground(new Color(FRAME_BG));
         instance.setTitle(FRAME_NAME);
         

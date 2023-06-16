@@ -57,7 +57,7 @@ public class StartupView extends AbstractView implements ActionListener{
         title.setHorizontalAlignment(SwingConstants.CENTER);
         
         
-        JButton toPlay = new JButton("<html><h1>Play</h1></html>");
+        JButton toPlay = new JButton("<html><h1>New game</h1></html>");
         toPlay.setPreferredSize(new Dimension(STARTUP_BTN_WIDTH, STARTUP_BTN_HEIGHT));
         toPlay.addActionListener(this);
         toPlay.setActionCommand(TOPLAY_COMMAND);

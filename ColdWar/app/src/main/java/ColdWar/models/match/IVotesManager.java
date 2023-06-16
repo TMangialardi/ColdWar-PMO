@@ -42,5 +42,5 @@ public interface IVotesManager {
      * 
      * @return true if there are still alive players, false otherwise.
      */
-    public boolean somePlayersStillAlive();
+    boolean somePlayersStillAlive();
 }
