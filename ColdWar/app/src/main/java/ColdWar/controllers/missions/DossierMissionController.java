@@ -70,18 +70,6 @@ public class DossierMissionController extends AbstractController{
                 }else {
                 	((DossierView)super.getView()).showNoTeamDialog();
                 }
-                /*if(((DossierView)super.getView()).getCiaButtonEnabled()){
-                    this.selectedTeam = Team.CIA;
-                    playDossierMission();
-                }else if(((DossierView)super.getView()).getKgbButtonEnabled()){
-                    this.selectedTeam = Team.KGB;
-                    playDossierMission();
-                }else if(((DossierView)super.getView()).getDoubleAgentButtonEnabled()){
-                    this.selectedTeam = Team.DOUBLEAGENT;
-                    playDossierMission();
-                }else {
-                	((DossierView)super.getView()).showNoTeamDialog();
-                } */
                 break;
             case DossierView.CONTINUE_COMMAND:
             	new NextPlayerController(super.getModel().getMatch().get().getCurrentTurn());
