@@ -14,6 +14,15 @@
     <br />
   </p>
 </p>
+
+### Table of contents
+
+* [About the Project](#about-the-project)
+* [Prerequisites](#prerequisites)
+* [How to run the game](#how-to-run-the-game)
+
+### About the project
+
 Cold War is a political party game inspired to the rivalry between the United States and the Soviet Union and their respective allies. A match requires 5 to 13 players. Each player must be added to the game with a unique name. The players are automatically divided into 3 separate teams: CIA, KGB and Double agents. At the beginning of a match, no player knows the roles of the other players. The number of members in each team is related to the total number of players, according to the following table:
 
 
@@ -52,3 +61,14 @@ After 5 minutes each player has to vote for the elimination of a player, includi
 At the end of the first turn a second turn begins. The players who have received a "murder", "suicide" or "bodyguard" mission during the first turn can only receive a "confession", "dossier", "tip" or "colleagues" mission in the second turn.
 
 At the end of the second turn the match ends and the winners are announced. The winning team is determined by the number of CIA and KGB members eliminated. If more CIA members are eliminated, the KGB wins, if more KGB members are eliminated, the CIA wins, and if the number of CIA and KGB members eliminated equals, the Double agents win, regardless of the number of members eliminated from their team. In addition to the members of the winning team, those who have eventually successfully completed a "murder", "suicide" or "bodyguard" mission are added to the winners of the game.
+
+### Prerequisites
+
+JDK Version 17 or older is required to play the game
+
+### How to run the game
+
+1. Install the official released version of Cold War from [here](https://github.com/TMangialardi/ColdWar-PMO/releases/tag/v1.0.1)
+2. The downloaded file should be executable with a double click.
+3. If the game doesn't start with a double click, execute ```java -jar 'nameOfJarFileDownloaded.jar'``` from the download directory from a terminal.
+4. Cold War should be up and running.
