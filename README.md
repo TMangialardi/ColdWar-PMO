@@ -23,7 +23,7 @@
 
 ### About the project
 
-Cold War is a political party game inspired to the rivalry between the United States and the Soviet Union and their respective allies. A match requires 5 to 13 players. Each player must be added to the game with a unique name. The players are automatically divided into 3 separate teams: CIA, KGB and Double agents. At the beginning of a match, no player knows the roles of the other players. The number of members in each team is related to the total number of players, according to the following table:
+Cold War is a political party game inspired to the rivalry between the United States and the Soviet Union and their respective allies. The game is meant to be played with a single device. A match requires 5 to 13 players. Each player must be added to the game with a unique name. The players are automatically divided into 3 separate teams: CIA, KGB and Double agents. At the beginning of a match, no player knows the roles of the other players. The number of members in each team is related to the total number of players, according to the following table:
 
 
 | Players       | CIA           | KGB           | Double agents |
