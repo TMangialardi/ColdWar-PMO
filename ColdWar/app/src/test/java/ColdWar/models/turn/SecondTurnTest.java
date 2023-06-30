@@ -56,7 +56,7 @@ class SecondTurnTest {
 	}
 	
 	@Test
-	public void testSecondTurnCompleted() {
+	void testSecondTurnCompleted() {
 		System.out.println("***************************************");
 		for(int i = 0; i < ApplicationInstance.getInstance().getPlayers().get().size(); i++) {
 			selectedPlayer = secondTurn.selectPlayer();

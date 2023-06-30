@@ -53,7 +53,7 @@ class MatchTest {
 	}
 	
 	@Test
-	public void testUpdateTurn() {
+	void testUpdateTurn() {
 		assertEquals(match.getCurrentTurn(), Match.FIRST_TURN);
 		match.updateCurrentTurn();
 		assertEquals(match.getCurrentTurn(), Match.SECOND_TURN);

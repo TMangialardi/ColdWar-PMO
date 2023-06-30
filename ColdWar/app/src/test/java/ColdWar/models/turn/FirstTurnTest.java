@@ -40,7 +40,7 @@ class FirstTurnTest {
 	}
 	
 	@Test
-	public void testFirstTurnCompleted() {
+	void testFirstTurnCompleted() {
 		System.out.println("***************************************");
 		for(int i = 0; i < ApplicationInstance.getInstance().getPlayers().get().size(); i++) {
 			selectedPlayer = firstTurn.selectPlayer();

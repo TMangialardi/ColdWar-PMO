@@ -18,7 +18,7 @@ class PlayerTest {
 	}
 	
 	@Test
-	public void getInitialData() {
+	void getInitialData() {
 		assertEquals(NAME, player.getName());
 		assertEquals(null, player.getTeam());
 		assertEquals(true, player.isAlive());
@@ -34,39 +34,39 @@ class PlayerTest {
 	}
 	
 	@Test
-	public void playFirstTurn() {
+	void playFirstTurn() {
 		assertEquals(true, player.playTurn(1));
 		assertEquals(true, player.hasPlayedThisTurn(1));
 	}
 	
 	@Test
-	public void playSecondTurn() {
+	void playSecondTurn() {
 		assertEquals(true, player.playTurn(2));
 		assertEquals(true, player.hasPlayedThisTurn(2));
 	}
 	
 	@Test
-	public void playThirdTurn() {
+	void playThirdTurn() {
 		assertEquals(false, player.playTurn(3));
 		assertEquals(true, player.hasPlayedThisTurn(3));
 	}
 	
 	@Test
-	public void testTeam() {
+	void testTeam() {
 		player.setTeam(Team.CIA);
 		
 		assertEquals(Team.CIA, player.getTeam());
 	}
 	
 	@Test
-	public void testDeath() {
+	void testDeath() {
 		player.setDead();
 		
 		assertEquals(false, player.isAlive());
 	}
 	
 	@Test
-	public void extraMission() {
+	void extraMission() {
 		player.setExtraMission(MissionType.MURDER, new Player("TestMission"));
 		
 		assertEquals(true, player.hasExtraMission());
@@ -80,7 +80,7 @@ class PlayerTest {
 	}
 	
 	@Test
-	public void votes() {
+	void votes() {
 		player.addVote(1);
 		player.addVote(1);
 		player.addVote(1);

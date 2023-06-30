@@ -28,7 +28,7 @@ class DossierTest {
 	}
 	
 	@Test
-	public void testDossier() {
+	void testDossier() {
 		assertFalse(dossier.playMission(this.kgbPlayer, this.doubleAgentPlayer, Team.CIA));
 		assertTrue(dossier.playMission(this.kgbPlayer, this.ciaPlayer, Team.CIA));
 		assertTrue(dossier.playMission(this.ciaPlayer, this.doubleAgentPlayer, Team.CIA));
