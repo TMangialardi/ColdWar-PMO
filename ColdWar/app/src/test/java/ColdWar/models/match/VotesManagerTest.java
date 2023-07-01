@@ -16,7 +16,7 @@ class VotesManagerTest {
 	private Random rnd;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		rnd = new Random();	
 		
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
@@ -34,7 +34,7 @@ class VotesManagerTest {
 	
 	
 	@RepeatedTest(100)
-	public void testEliminated() {
+	void testEliminated() {
 		int maxVotesFirstTurn = -1;
 		int maxVotesSecondTurn = -1;
         for(Player p : ApplicationInstance.getInstance().getPlayers().get()){
@@ -79,7 +79,7 @@ class VotesManagerTest {
     }
 	
 	@RepeatedTest(100)
-	public void testWinners() {
+	void testWinners() {
 		System.out.println("*************************");
 		int maxVotesFirstTurn = -1;
 		int maxVotesSecondTurn = -1;

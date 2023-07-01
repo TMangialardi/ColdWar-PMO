@@ -18,7 +18,7 @@ class MurderTest {
 	private static Random rnd;
 
 	@BeforeEach
-	public void init() {
+	void init() {
 		murder = new Murder();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		for(int i = 0; i < 13; i++) {
@@ -29,7 +29,7 @@ class MurderTest {
 	
 	
 	@RepeatedTest(100)
-	public void testMurder() {
+	void testMurder() {
 		IPlayer selectedPlayer = ApplicationInstance.getInstance().getPlayer(rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size())).get();
 		IPlayer targetPlayer = murder.playMission(selectedPlayer);
 		System.out.println("Selected: " + selectedPlayer.getName() + " Target: " + targetPlayer.getName());

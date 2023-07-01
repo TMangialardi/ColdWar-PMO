@@ -13,7 +13,7 @@ public abstract class AbstractExtraMission implements ExtraMission{
     
     private MissionType missionType;
     
-    public AbstractExtraMission(MissionType missionType){
+    protected AbstractExtraMission(MissionType missionType){
         this.missionType = missionType;
     }
     

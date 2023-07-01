@@ -13,12 +13,12 @@ import ColdWar.models.player.Player;
 class ApplicationInstanceTest {
 
 	@Test
-	public void testGetInstance() {
+	void testGetInstance() {
 		assertNotNull(ApplicationInstance.getInstance());
 	}
 	
 	@Test
-	public void testPlayers() {
+	void testPlayers() {
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		assertNotNull(ApplicationInstance.getInstance().getPlayers().get());
 		for(int i = 0; i < 13; i++) {
@@ -29,7 +29,7 @@ class ApplicationInstanceTest {
 	}
 	
 	@Test
-	public void testMatch() {
+	void testMatch() {
 		assertEquals(Optional.empty(), ApplicationInstance.getInstance().getMatch());
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		for(int i = 0; i < 13; i++) {

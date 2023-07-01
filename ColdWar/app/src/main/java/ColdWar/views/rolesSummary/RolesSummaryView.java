@@ -21,6 +21,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 /**
  * View to show separately to each player its role.
@@ -146,7 +147,11 @@ public class RolesSummaryView extends AbstractView implements ActionListener{
      * @param visibility - the value to be set.
      */
     public void setRoleLabelVisibility(boolean visibility){
-        this.roleLabel.setVisible(visibility);
+        SwingUtilities.invokeLater(new Runnable() {
+        	public void run() {
+        		roleLabel.setVisible(visibility);
+        	}
+        });
     }
     
     /**

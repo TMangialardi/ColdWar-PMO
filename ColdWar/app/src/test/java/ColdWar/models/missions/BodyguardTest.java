@@ -14,11 +14,11 @@ import ColdWar.models.player.Player;
 
 class BodyguardTest {
 
-	public static Bodyguard bodyguard;
-	public static Random rnd;
+	private static Bodyguard bodyguard;
+	private static Random rnd;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		bodyguard = new Bodyguard();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		for(int i = 0; i < 13; i++) {
@@ -29,7 +29,7 @@ class BodyguardTest {
 	
 	
 	@RepeatedTest(100)
-	public void testBodyguard() {
+	void testBodyguard() {
 		IPlayer selectedPlayer = ApplicationInstance.getInstance().getPlayer(rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size())).get();
 		IPlayer targetPlayer = bodyguard.playMission(selectedPlayer);
 		System.out.println("Selected: " + selectedPlayer.getName() + " Target: " + targetPlayer.getName());

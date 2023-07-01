@@ -29,6 +29,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 /**
  * View for the Dossier mission.
@@ -310,7 +311,11 @@ public class DossierView extends AbstractView implements ActionListener{
      * @param visible - the visibility to be set.
      */
     public void setResultLabelVisible(boolean visible){
-        this.resultLabel.setVisible(visible);
+        SwingUtilities.invokeLater(new Runnable() {
+        	public void run() {
+        		resultLabel.setVisible(visible);
+        	}
+        });
     }
     
     /**

@@ -19,7 +19,7 @@ class TipTest {
 	private IPlayer targetPlayer;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		tip = new Tip();
 		rnd = new Random();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
@@ -31,7 +31,7 @@ class TipTest {
 	}
 
 	@RepeatedTest(100)
-	public void testTip() {
+	void testTip() {
 		IPlayer selectedPlayer = ApplicationInstance.getInstance().getPlayer(rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size())).get();
 		String targetPlayerName = tip.playMission(selectedPlayer);
 		targetPlayer = null;

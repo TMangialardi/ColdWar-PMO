@@ -91,7 +91,7 @@ public class VotesManager implements IVotesManager{
                 }
                 return this.eliminatedSecondTurn;
             default:
-                return null;
+                return new ArrayList<Player>();
         }
     }
     

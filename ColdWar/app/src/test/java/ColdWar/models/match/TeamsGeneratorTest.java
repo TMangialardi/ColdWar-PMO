@@ -14,7 +14,7 @@ class TeamsGeneratorTest {
 	private TeamsGenerator teamsGenerator;
 
 	@BeforeEach
-	public void init() {
+	void init() {
 		teamsGenerator = new TeamsGenerator();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		for(int i = 0; i < 13; i++) {
@@ -23,7 +23,7 @@ class TeamsGeneratorTest {
 	}
 	
 	@RepeatedTest(100)
-	void test() {
+	void testTeamGenerator() {
 		teamsGenerator.generateTeams();
 		int teamsCount = teamsGenerator.getCountCIA() + teamsGenerator.getCountKGB() + teamsGenerator.getCountDoubleAgents();
 		

@@ -18,7 +18,7 @@ class ColleaguesTest {
 	private static Random rnd;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		colleagues = new Colleagues();
 		rnd = new Random();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
@@ -30,7 +30,7 @@ class ColleaguesTest {
 	}
 
 	@RepeatedTest(100)
-	public void testColleagues() {
+	void testColleagues() {
 		colleagues.playMission();
 		String firstTargetName = colleagues.getDrawnPlayerName(1);
 		String secondTargetName = colleagues.getDrawnPlayerName(2);

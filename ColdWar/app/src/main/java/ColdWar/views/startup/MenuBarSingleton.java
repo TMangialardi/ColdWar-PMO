@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.SwingUtilities;
 
 /**
  * Singleton implementation of a custom menu bar.
@@ -23,9 +24,10 @@ public class MenuBarSingleton extends JMenuBar implements ActionListener{
     
     private static JMenu gameInfo;
     private static JMenuItem toExit;
+    private MenuBarDialog dialogWindow;
     
     private MenuBarSingleton(){
-        gameInfo = new JMenu("About the game"); 
+        gameInfo = new JMenu("About the game");
         
         JMenuItem toRoles = new JMenuItem("Game roles");
         toRoles.addActionListener(this);
@@ -64,16 +66,27 @@ public class MenuBarSingleton extends JMenuBar implements ActionListener{
 
     public void actionPerformed(ActionEvent ae) {
        String action = ae.getActionCommand();
-       MenuBarDialog dialogWindow = null;
        if(action.equals(MenuBarAction.ROLES.name())){
             dialogWindow = new MenuBarDialog(ROLES_FILE);
-            dialogWindow.setVisible(true);
+            SwingUtilities.invokeLater(new Runnable() {
+            	public void run() {
+            		dialogWindow.setVisible(true);
+            	}
+            });
         } else if (action.equals(MenuBarAction.MISSIONS.name())){
             dialogWindow = new MenuBarDialog(MISSIONS_FILE);
-            dialogWindow.setVisible(true);
+            SwingUtilities.invokeLater(new Runnable() {
+            	public void run() {
+            		dialogWindow.setVisible(true);
+            	}
+            });
         } else if (action.equals(MenuBarAction.RULEBOOK.name())){
             dialogWindow = new MenuBarDialog(RULEBOOK_FILE);
-            dialogWindow.setVisible(true);
+            SwingUtilities.invokeLater(new Runnable() {
+            	public void run() {
+            		dialogWindow.setVisible(true);
+            	}
+            });
         } else if (action.equals(MenuBarAction.EXIT.name())){
             System.exit(0);
         }

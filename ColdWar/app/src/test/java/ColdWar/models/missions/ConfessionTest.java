@@ -19,7 +19,7 @@ class ConfessionTest {
 	private static Confession confession;
 
 	@BeforeEach
-	public void init() {
+	void init() {
 		confession = new Confession();
 		rnd = new Random();	
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
@@ -31,7 +31,7 @@ class ConfessionTest {
 	}
 	
 	@RepeatedTest(100)
-	public void testConfession() {
+	void testConfession() {
 		IPlayer selectedPlayer = ApplicationInstance.getInstance().getPlayer(rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size())).get();
 		Team selectedTeam = confession.playMission(selectedPlayer);
 		System.out.println("Player: " + selectedPlayer.getName() + " Team: " + selectedTeam.name());

@@ -18,7 +18,7 @@ class MatchTest {
 	private Random rnd;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		rnd = new Random();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		for(int i = 0; i < 13; i++) {
@@ -28,7 +28,7 @@ class MatchTest {
 	}
 	
 	@RepeatedTest(100)
-	public void testMatchDecrements() {
+	void testMatchDecrements() {
 		
 		int randomCount = rnd.nextInt(4);
 		
@@ -53,7 +53,7 @@ class MatchTest {
 	}
 	
 	@Test
-	public void testUpdateTurn() {
+	void testUpdateTurn() {
 		assertEquals(match.getCurrentTurn(), Match.FIRST_TURN);
 		match.updateCurrentTurn();
 		assertEquals(match.getCurrentTurn(), Match.SECOND_TURN);

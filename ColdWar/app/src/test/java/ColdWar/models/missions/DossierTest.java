@@ -17,7 +17,7 @@ class DossierTest {
 	private Dossier dossier;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		this.ciaPlayer = new Player("ciaPlayer");
 		this.ciaPlayer.setTeam(Team.CIA);
 		this.kgbPlayer = new Player("kgbPlayer");
@@ -28,7 +28,7 @@ class DossierTest {
 	}
 	
 	@Test
-	public void testDossier() {
+	void testDossier() {
 		assertFalse(dossier.playMission(this.kgbPlayer, this.doubleAgentPlayer, Team.CIA));
 		assertTrue(dossier.playMission(this.kgbPlayer, this.ciaPlayer, Team.CIA));
 		assertTrue(dossier.playMission(this.ciaPlayer, this.doubleAgentPlayer, Team.CIA));

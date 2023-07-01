@@ -18,7 +18,7 @@ class SuicideTest {
 	private static Random rnd;
 	
 	@BeforeEach
-	public void init() {
+	void init() {
 		suicide = new Suicide();
 		ApplicationInstance.getInstance().setPlayers(new ArrayList<Player>());
 		for(int i = 0; i < 13; i++) {
@@ -28,7 +28,7 @@ class SuicideTest {
 	}
 
 	@RepeatedTest(100)
-	public void testSuicide() {
+	void testSuicide() {
 		IPlayer selectedPlayer = ApplicationInstance.getInstance().getPlayer(rnd.nextInt(ApplicationInstance.getInstance().getPlayers().get().size())).get();
 		IPlayer targetPlayer = suicide.playMission(selectedPlayer);
 		System.out.println("Selected: " + selectedPlayer.getName() + " Target: " + targetPlayer.getName());
